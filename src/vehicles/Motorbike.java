@@ -6,7 +6,8 @@ public class Motorbike extends Vehicle {
      * Task 6
      * create two private variables boolean helmetPresent , int currentSpeed
      */
-
+     private  boolean  helmetPresent;
+     private  int currentSpeed;
 
 
 
@@ -14,9 +15,21 @@ public class Motorbike extends Vehicle {
      * Task 7
      * create a getter methods for helmetPresent and currentSpeed
      */
+    public boolean isHelmetPresent() {
+        return helmetPresent;
+    }
 
+    public void setHelmetPresent(boolean helmetPresent) {
+        this.helmetPresent = helmetPresent;
+    }
 
+    public int getCurrentSpeed() {
+        return currentSpeed;
+    }
 
+    public void setCurrentSpeed(int currentSpeed) {
+        this.currentSpeed = currentSpeed;
+    }
 
     /**
      * Task 8
@@ -24,6 +37,14 @@ public class Motorbike extends Vehicle {
      * order of parameters are model, color, helmetPresent, currentSpeed
      */
 
+
+
+
+    public Motorbike(String model, String color, boolean helmetPresent, int currentSpeed) {
+        super(model, color);
+        this.helmetPresent = helmetPresent;
+        this.currentSpeed = currentSpeed;
+    }
 
 
 
@@ -39,6 +60,32 @@ public class Motorbike extends Vehicle {
      * <p>
      * return extraFine
      */
+
+    public int  additionalFineForNoHelmet() {
+
+//        if(currentSpeed >=100 && currentSpeed >=150)
+//           return 280;
+
+        int extraFine = Ticket.getFine(currentSpeed);
+
+
+            if (!helmetPresent) {
+                extraFine += 200;
+            }
+
+            return extraFine;
+        }
+
+
+//        int extraFine=Ticket.getFine(currentSpeed);
+//
+//       if(isHelmetPresent()){
+//       }
+//       else {
+//           return 700;
+//       }
+//
+//        return extraFine;
 
 
 
